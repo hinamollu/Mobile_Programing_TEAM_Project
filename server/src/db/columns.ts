@@ -2,13 +2,13 @@ import { integer } from 'drizzle-orm/sqlite-core'
 
 /** Creation time as Unix milliseconds (UTC). */
 export const createdAt = () =>
-    integer('created_at', { mode: 'timestamp_ms' })
+    integer('created_at')
         .notNull()
-        .$defaultFn(() => new Date())
+        .$defaultFn(() => Date.now())
 
 /** Last update time; drizzle refreshes it on every `update()`. */
 export const updatedAt = () =>
-    integer('updated_at', { mode: 'timestamp_ms' })
+    integer('updated_at')
         .notNull()
-        .$defaultFn(() => new Date())
-        .$onUpdateFn(() => new Date())
+        .$defaultFn(() => Date.now())
+        .$onUpdateFn(() => Date.now())
