@@ -1,9 +1,10 @@
-import { Hono } from 'hono'
+import { createApp } from './app'
+import { openDatabase } from './db'
+import { env } from './env'
 
-const app = new Hono()
+const { db } = openDatabase({ path: env.databasePath })
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
-
-export default app
+export default {
+    port: env.port,
+    fetch: createApp(db).fetch,
+}

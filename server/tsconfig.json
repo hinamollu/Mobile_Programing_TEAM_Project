@@ -1,17 +1,15 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "types": [
-      "bun"
-    ],
-    "skipLibCheck": true,
-    "module": "preserve",
-    "moduleResolution": "bundler",
-    "target": "esnext",
-    "noEmit": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src/**/*", "drizzle.config.ts"]
+    "compilerOptions": {
+        "strict": true,
+        "types": ["bun"],
+        "skipLibCheck": true,
+        "module": "preserve",
+        "moduleResolution": "bundler",
+        "target": "esnext",
+        "noEmit": true,
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "include": ["src/**/*", "drizzle.config.ts"]
 }
