@@ -4,8 +4,14 @@
     "types": [
       "bun"
     ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx",
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "target": "esnext",
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "drizzle.config.ts"]
 }
