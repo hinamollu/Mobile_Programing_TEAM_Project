@@ -1,2 +1,13 @@
 # deps
 node_modules/
+
+# local database
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# env
+.env
+.env.*
+!.env.example
