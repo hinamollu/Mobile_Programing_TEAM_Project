@@ -31,5 +31,27 @@ export function createTestApp() {
         return { token: body.token as string, user: body.user as { id: string; email: string } }
     }
 
-    return { app, request, signup }
+    async function createProject(token: string, name = 'Project') {
+        const room = await request('POST', '/rooms', {
+            token,
+            body: {
+                name: 'Room',
+                width: 3000,
+                length: 4000,
+                openings: [{ kind: 'door', wall: 's', offset: 200, width: 900 }],
+            },
+        })
+        const project = await request('POST', '/projects', {
+            token,
+            body: { name, baseRoomId: room.body.id },
+        })
+        return { room: room.body, snapshot: project.body }
+    }
+
+    async function revision(token: string, projectId: string) {
+        return (await request('GET', `/projects/${projectId}/revision`, { token })).body
+            .revision as number
+    }
+
+    return { app, request, signup, createProject, revision }
 }
