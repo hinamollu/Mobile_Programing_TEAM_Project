@@ -6,7 +6,9 @@ import type { Db } from './db'
 import { errorBody, errorHandler, notFound } from './lib/errors'
 import { requireAuth } from './middleware/auth'
 import { auth, publicAuth } from './routes/auth'
+import { friendRoutes } from './routes/friends'
 import { furnitureRoutes } from './routes/furniture'
+import { inviteRoutes } from './routes/invites'
 import { layoutRoutes } from './routes/layouts'
 import { placementRoutes } from './routes/placements'
 import { projectRoutes } from './routes/projects'
@@ -32,6 +34,8 @@ export function createApp(db: Db) {
     api.route('/', projectRoutes)
     api.route('/', layoutRoutes)
     api.route('/', placementRoutes)
+    api.route('/', friendRoutes)
+    api.route('/', inviteRoutes)
 
     app.route('/api/v1', api)
     return app
