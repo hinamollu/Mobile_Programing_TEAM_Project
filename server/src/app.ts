@@ -6,6 +6,8 @@ import type { Db } from './db'
 import { errorBody, errorHandler, notFound } from './lib/errors'
 import { requireAuth } from './middleware/auth'
 import { auth, publicAuth } from './routes/auth'
+import { furnitureRoutes } from './routes/furniture'
+import { roomRoutes } from './routes/rooms'
 
 export function createApp(db: Db) {
     const app = new Hono<AppEnv>()
@@ -22,6 +24,8 @@ export function createApp(db: Db) {
     api.route('/', publicAuth)
     api.use(requireAuth)
     api.route('/', auth)
+    api.route('/', roomRoutes)
+    api.route('/', furnitureRoutes)
 
     app.route('/api/v1', api)
     return app
