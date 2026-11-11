@@ -70,6 +70,10 @@ describe('rooms', () => {
         })
         expect(invalid.status).toBe(400)
         expect(invalid.body.error.code).toBe('validation_error')
+
+        const room = (await t.request('POST', '/rooms', { token, body: roomBody })).body
+        const empty = await t.request('PATCH', `/rooms/${room.id}`, { token, body: {} })
+        expect(empty.status).toBe(400)
     })
 
     it("hides other users' rooms and openings", async () => {

@@ -10,6 +10,9 @@ export const uuid = z.uuid()
 export const rotation = z.union([z.literal(0), z.literal(90), z.literal(180), z.literal(270)])
 export const name = z.string().trim().min(1).max(100)
 
+export const partial = <S extends z.ZodObject>(schema: S) =>
+    schema.partial().refine((value) => Object.keys(value).length > 0, 'Nothing to update')
+
 export const idParam = z.object({ id: uuid })
 export const userIdParam = z.object({ userId: uuid })
 

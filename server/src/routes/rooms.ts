@@ -6,7 +6,7 @@ import type { AppEnv } from '@/context'
 import { type Db, roomOpenings, rooms } from '@/db'
 import { conflict, notFound } from '@/lib/errors'
 import { newId } from '@/lib/id'
-import { coord, idParam, mm, name, uuid, validate } from '@/lib/validate'
+import { coord, idParam, mm, name, partial, uuid, validate } from '@/lib/validate'
 import { requireOpening, requireRoom } from '@/services/access'
 import { bumpRevision } from '@/services/revision'
 import { getRoom, withOpenings } from '@/services/rooms'
@@ -30,7 +30,7 @@ const roomBody = z.object({
     length: mm,
     openings: z.array(openingBody).max(100).optional(),
 })
-const roomPatch = roomBody.pick({ name: true, width: true, length: true }).partial()
+const roomPatch = partial(roomBody.pick({ name: true, width: true, length: true }))
 
 function requireLibraryRoom(db: Db, roomId: string, userId: string) {
     const room = requireRoom(db, roomId, userId)
@@ -119,7 +119,7 @@ export const roomRoutes = new Hono<AppEnv>()
     .patch(
         '/openings/:id',
         validate('param', idParam),
-        validate('json', openingFields.partial()),
+        validate('json', partial(openingFields)),
         (c) => {
             const db = c.var.db
             const { opening, room } = requireOpening(db, c.req.valid('param').id, c.var.user.id)

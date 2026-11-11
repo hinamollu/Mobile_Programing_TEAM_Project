@@ -6,7 +6,7 @@ import type { AppEnv } from '@/context'
 import { type DbOrTx, furniture } from '@/db'
 import { conflict, requireEntity } from '@/lib/errors'
 import { newId } from '@/lib/id'
-import { idParam, mm, name, uuid, validate } from '@/lib/validate'
+import { idParam, mm, name, partial, uuid, validate } from '@/lib/validate'
 
 const furnitureFields = z.object({
     name,
@@ -60,7 +60,7 @@ export const furnitureRoutes = new Hono<AppEnv>()
     .patch(
         '/furniture/:id',
         validate('param', idParam),
-        validate('json', furnitureFields.partial()),
+        validate('json', partial(furnitureFields)),
         (c) => {
             const db = c.var.db
             const item = requireFurniture(db, c.req.valid('param').id, c.var.user.id)

@@ -6,7 +6,7 @@ import type { AppEnv } from '@/context'
 import { placements } from '@/db'
 import { conflict } from '@/lib/errors'
 import { newId } from '@/lib/id'
-import { coord, idParam, mm, name, rotation, uuid, validate } from '@/lib/validate'
+import { coord, idParam, mm, name, partial, rotation, uuid, validate } from '@/lib/validate'
 import { requireLayout, requirePlacement } from '@/services/access'
 import { bumpRevision } from '@/services/revision'
 
@@ -25,7 +25,7 @@ const placementBody = z.union([
         height: mm,
     }),
 ])
-const placementPatch = z.object({ x: coord, y: coord, rotation }).partial()
+const placementPatch = partial(z.object({ x: coord, y: coord, rotation }))
 
 export const placementRoutes = new Hono<AppEnv>()
     .post(
