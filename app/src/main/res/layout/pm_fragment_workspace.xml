@@ -1,0 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/pm_background">
+<androidx.fragment.app.FragmentContainerView android:id="@+id/pm_tab_content" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+<LinearLayout android:layout_width="match_parent" android:layout_height="72dp" android:paddingHorizontal="12dp" android:gravity="center_vertical" android:background="@color/pm_card">
+<TextView android:id="@+id/pm_tab_room" style="@style/pm_Tab" android:text="@string/pm_tab_room" android:drawableTop="@drawable/pm_home"/>
+<TextView android:id="@+id/pm_tab_furniture" style="@style/pm_Tab" android:text="@string/pm_tab_furniture" android:drawableTop="@drawable/pm_furniture"/>
+<TextView android:id="@+id/pm_tab_projects" style="@style/pm_Tab" android:text="@string/pm_tab_projects" android:drawableTop="@drawable/pm_grid"/>
+<TextView android:id="@+id/pm_tab_mypage" style="@style/pm_Tab" android:text="@string/pm_tab_mypage" android:drawableTop="@drawable/pm_person"/>
+</LinearLayout></LinearLayout>

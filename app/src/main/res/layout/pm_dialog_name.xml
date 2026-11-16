@@ -1,0 +1,4 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+ <EditText android:id="@+id/pm_input" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:inputType="textCapSentences" android:maxLength="60" android:hint="@string/pm_name_hint"/>
+ <CheckBox android:id="@+id/pm_shared" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/pm_shared"/>
+</LinearLayout>

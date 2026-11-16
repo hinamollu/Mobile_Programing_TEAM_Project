@@ -1,0 +1,7 @@
+<resources>
+    <color name="pm_background">#F1F4FA</color>
+    <color name="pm_card">#FCFCFF</color>
+    <color name="pm_mint">#DDF2EE</color>
+    <color name="pm_teal">#278D83</color>
+    <color name="pm_ink">#23323B</color>
+</resources>
