@@ -1,0 +1,18 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "promise", "node"],
+    "categories": {
+        "correctness": "error"
+    },
+    "rules": {
+        "import/no-unassigned-import": "off",
+        "import/no-cycle": "error"
+    },
+    "options": {
+        "typeAware": true,
+        "typeCheck": true,
+        "denyWarnings": true,
+        "reportUnusedDisableDirectives": "error"
+    },
+    "ignorePatterns": ["**/node_modules/**", "**/dist/**", "**/coverage/**", "src/db/migrations/**"]
+}

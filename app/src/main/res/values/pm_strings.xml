@@ -1,0 +1,38 @@
+<resources>
+    <string name="pm_back">뒤로</string>
+    <string name="pm_mock">임시 데이터 · 앱 종료 시 변경 내용이 초기화됩니다</string>
+    <string name="pm_share">프로젝트 공유</string>
+    <string name="pm_delete">삭제</string>
+    <string name="pm_shared">공유 프로젝트</string>
+    <string name="pm_personal">개인 프로젝트</string>
+    <string name="pm_list_title">내 배치 프로젝트</string>
+    <string name="pm_name_hint">이름 (필수, 최대 60자)</string>
+    <string name="pm_name_error">이름을 입력해 주세요</string>
+    <string name="pm_save">저장</string>
+    <string name="pm_cancel">취소</string>
+    <string name="pm_project_add">+ 프로젝트 추가</string>
+    <string name="pm_plan_add">+ 배치안 추가</string>
+    <string name="pm_furniture_add">+ 가구 추가</string>
+    <string name="pm_project_create">프로젝트 만들기</string>
+    <string name="pm_project_edit">프로젝트 수정</string>
+    <string name="pm_plan_create">배치안 만들기</string>
+    <string name="pm_open_project">프로젝트 열기</string>
+    <string name="pm_manage">프로젝트 관리 ⋯</string>
+    <string name="pm_duplicate">복제</string>
+    <string name="pm_place">배치하기</string>
+    <string name="pm_remove">선택 해제</string>
+    <string name="pm_catalog">가구 선택</string>
+    <string name="pm_empty">아직 항목이 없습니다. 아래 추가 버튼을 눌러 주세요.</string>
+    <string name="pm_delete_title">삭제하시겠습니까?</string>
+    <string name="pm_delete_message">선택한 항목과 포함된 임시 데이터를 삭제합니다.</string>
+    <string name="pm_unavailable">연결된 화면이 없습니다. 팀 통합 시 콜백을 연결해 주세요.</string>
+    <string name="pm_furniture_title">%1$s / 선택 가구</string>
+    <string name="pm_project_title">프로젝트 / %1$s</string>
+    <string name="pm_plan_count">%1$d개 배치안</string>
+    <string name="pm_furniture_count">가구 %1$d개 ›</string>
+    <string name="pm_selected_count">선택 가구 %1$d개</string>
+    <string name="pm_delete_named">%1$s 삭제</string>
+    <string name="pm_catalog_empty">추가할 수 있는 가구가 없습니다.</string>
+<string name="pm_tab_room">방</string><string name="pm_tab_furniture">가구</string><string name="pm_tab_projects">배치</string><string name="pm_tab_mypage">마이페이지</string><string name="pm_placeholder">팀원 개발안 넣을 공간</string>    <string name="pm_base_room">내 방</string>
+    <string name="pm_no_base_room">방 선택 안 함</string>
+</resources>
