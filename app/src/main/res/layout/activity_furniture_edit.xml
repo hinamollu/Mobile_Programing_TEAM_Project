@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가구 추가하기"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- 가구 이름 입력 -->
+    <EditText
+        android:id="@+id/etFurnitureName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="가구 이름 (예: 2인용 소파)"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 가로 크기 입력 -->
+    <EditText
+        android:id="@+id/etFurnitureWidth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="가로 크기 (m)"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 세로 크기 입력 -->
+    <EditText
+        android:id="@+id/etFurnitureHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="세로 크기 (m)"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- 저장 버튼 -->
+    <Button
+        android:id="@+id/btnSaveFurniture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저장하기"/>
+
+</LinearLayout>
