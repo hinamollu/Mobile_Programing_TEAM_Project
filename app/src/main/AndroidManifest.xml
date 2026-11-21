@@ -8,6 +8,7 @@
         android:theme="@style/Theme.TeamProject">
         <activity android:name="com.example.ourroom.RoomEditActivity" android:exported="false" />
         <activity android:name="com.example.ourroom.FurnitureEditActivity" android:exported="false" />
+        <activity android:name=".feature.placement.PlacementActivity" android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

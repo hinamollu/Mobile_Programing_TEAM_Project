@@ -73,7 +73,7 @@ private class RoomAdapter(
     override fun onBindViewHolder(holder: RoomViewHolder, position: Int) {
         val room = roomList[position]
         holder.tvTitle.text = room.name
-        holder.tvSub.text = "크기: ${room.width}m x ${room.height}m / 문: ${room.doorCount}개, 창문: ${room.windowCount}개"
+        holder.tvSub.text = "크기: ${Mm.format(room.width)}mm x ${Mm.format(room.height)}mm / 문: ${room.doorCount}개, 창문: ${room.windowCount}개"
 
         // 4. 기획하신 `...` 버튼 팝업 띄우기 (수정/삭제)
         holder.btnMore.setOnClickListener {

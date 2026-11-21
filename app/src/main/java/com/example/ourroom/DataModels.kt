@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey
 data class RoomEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    val width: Float,  // 가로 길이
-    val height: Float, // 세로 길이
+    val width: Float,  // 가로 길이 (mm)
+    val height: Float, // 세로 길이 (mm)
     val doorCount: Int,
     val windowCount: Int
 )
@@ -19,7 +19,7 @@ data class RoomEntity(
 data class FurnitureEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-    val width: Float,  // 가로
-    val depth: Float,  // 세로 (깊이)
-    val height: Float  // 높이
+    val width: Float,  // 가로 (mm)
+    val depth: Float,  // 세로 (깊이, mm)
+    val height: Float  // 높이 (mm)
 )

@@ -66,7 +66,7 @@ private class FurnitureAdapter(
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val item = furniture[position]
         holder.title.text = item.name
-        holder.subtitle.text = "${item.width}m × ${item.depth}m"
+        holder.subtitle.text = "${Mm.format(item.width)}mm × ${Mm.format(item.depth)}mm"
         holder.itemView.findViewById<View>(R.id.btnMore).setOnClickListener { anchor ->
             PopupMenu(anchor.context, anchor).apply {
                 menu.add("가구 수정").setOnMenuItemClickListener { onEdit(item); true }

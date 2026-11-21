@@ -2,8 +2,8 @@ package com.example.ourroom
 
 internal object RoomCatalog {
     private val rooms = mutableListOf(
-        RoomEntity(1, "내 침실", 4.0f, 3.0f, 1, 1),
-        RoomEntity(2, "거실", 5.5f, 4.0f, 2, 2)
+        RoomEntity(1, "내 침실", 4000f, 3000f, 1, 1),
+        RoomEntity(2, "거실", 5500f, 4000f, 2, 2)
     )
     private var nextId = 3
 

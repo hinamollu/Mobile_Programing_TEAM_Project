@@ -28,26 +28,26 @@ class RoomEditActivity : AppCompatActivity() {
         val windows = findViewById<EditText>(R.id.etWindow)
         if (current != null && savedInstanceState == null) {
             name.setText(current.name)
-            width.setText(current.width.toString())
-            length.setText(current.height.toString())
+            width.setText(Mm.format(current.width))
+            length.setText(Mm.format(current.height))
             doors.setText(current.doorCount.toString())
             windows.setText(current.windowCount.toString())
         }
 
         findViewById<Button>(R.id.btnSave).setOnClickListener {
             val roomName = name.text.toString().trim()
-            val roomWidth = width.text.toString().toFloatOrNull()
-            val roomLength = length.text.toString().toFloatOrNull()
+            val roomWidth = Mm.parse(width.text.toString())
+            val roomLength = Mm.parse(length.text.toString())
             val doorCount = doors.text.toString().ifBlank { "0" }.toIntOrNull()
             val windowCount = windows.text.toString().ifBlank { "0" }.toIntOrNull()
             when {
                 roomName.isEmpty() -> name.error = "방 이름을 입력해 주세요."
-                roomWidth == null || !roomWidth.isFinite() || roomWidth <= 0 -> width.error = "0보다 큰 가로 길이를 입력해 주세요."
-                roomLength == null || !roomLength.isFinite() || roomLength <= 0 -> length.error = "0보다 큰 세로 길이를 입력해 주세요."
+                roomWidth == null -> width.error = "가로 길이를 1~100000mm 정수로 입력해 주세요."
+                roomLength == null -> length.error = "세로 길이를 1~100000mm 정수로 입력해 주세요."
                 doorCount == null || doorCount < 0 -> doors.error = "문 개수를 확인해 주세요."
                 windowCount == null || windowCount < 0 -> windows.error = "창문 개수를 확인해 주세요."
                 else -> {
-                    RoomCatalog.save(RoomEntity(roomId, roomName, roomWidth, roomLength, doorCount, windowCount))
+                    RoomCatalog.save(RoomEntity(roomId, roomName, roomWidth.toFloat(), roomLength.toFloat(), doorCount, windowCount))
                     finish()
                 }
             }

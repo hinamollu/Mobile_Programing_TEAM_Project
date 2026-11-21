@@ -29,8 +29,8 @@
         android:id="@+id/etFurnitureWidth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="가로 크기 (m)"
-        android:inputType="numberDecimal"
+        android:hint="가로 크기 (mm, 예: 1500)"
+        android:inputType="number"
         android:layout_marginBottom="16dp"/>
 
     <!-- 세로 크기 입력 -->
@@ -38,8 +38,8 @@
         android:id="@+id/etFurnitureHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="세로 크기 (m)"
-        android:inputType="numberDecimal"
+        android:hint="세로 크기 (mm, 예: 850)"
+        android:inputType="number"
         android:layout_marginBottom="24dp"/>
 
     <!-- 저장 버튼 -->

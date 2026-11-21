@@ -29,20 +29,20 @@ class FurnitureEditActivity : AppCompatActivity() {
 
         if (current != null && savedInstanceState == null) {
             etFurnitureName.setText(current.name)
-            etFurnitureWidth.setText(current.width.toString())
-            etFurnitureHeight.setText(current.depth.toString())
+            etFurnitureWidth.setText(Mm.format(current.width))
+            etFurnitureHeight.setText(Mm.format(current.depth))
         }
 
         // 저장하기 버튼 클릭 시
         btnSaveFurniture.setOnClickListener {
             val name = etFurnitureName.text.toString().trim()
-            val width = etFurnitureWidth.text.toString().toDoubleOrNull()
-            val depth = etFurnitureHeight.text.toString().toDoubleOrNull()
+            val width = Mm.parse(etFurnitureWidth.text.toString())
+            val depth = Mm.parse(etFurnitureHeight.text.toString())
 
-            if (name.isEmpty() || width == null || depth == null || !width.isFinite() || !depth.isFinite() || width <= 0 || depth <= 0) {
-                Toast.makeText(this, "이름과 0보다 큰 가로·세로 크기를 입력해주세요.", Toast.LENGTH_SHORT).show()
+            if (name.isEmpty() || width == null || depth == null) {
+                Toast.makeText(this, "이름과 가로·세로 크기(1~100000mm 정수)를 입력해주세요.", Toast.LENGTH_SHORT).show()
             } else {
-                FurnitureCatalog.save(furnitureId, name, width, depth)
+                FurnitureCatalog.save(furnitureId, name, width.toDouble(), depth.toDouble())
                 finish()
             }
         }
